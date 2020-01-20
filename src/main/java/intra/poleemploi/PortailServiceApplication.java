@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 
 
 @SpringBootApplication
-public class PortailServiceApplication {
+public class PortailServiceApplication implements CommandLineRunner {
 	@Autowired
 	private RepositoryRestConfiguration repositoryRestConfiguration;
 
@@ -31,10 +31,12 @@ public class PortailServiceApplication {
 		SpringApplication.run(PortailServiceApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner start(AppliRepository appliRepository, ContentRepository contentRepository, AuthService authService, UserAppRepository userAppRepository){
-		return args -> {
-			repositoryRestConfiguration.exposeIdsFor(Appli.class, Content.class, UserApp.class, RoleApp.class);
+
+
+	//@Bean
+	//CommandLineRunner start(AppliRepository appliRepository, ContentRepository contentRepository, AuthService authService, UserAppRepository userAppRepository){
+		//return args -> {
+			//repositoryRestConfiguration.exposeIdsFor(Appli.class, Content.class, UserApp.class, RoleApp.class);
 			/*// A VIRER => supprime les données Appli avant chaque lancement de l'appli
 			appliRepository.deleteAll();
 			// save les données Appli en BDD
@@ -103,12 +105,18 @@ public class PortailServiceApplication {
 
 			userAppRepository.findAll().forEach(System.out::println);*/
 			
-		};
-	}
+		//};
+	//}
+
 	// créer BCryptPasswordEncoder au démarrage de l'appli pour injection dans couche Service
 	@Bean
 	BCryptPasswordEncoder getBCPE() {
 		return new BCryptPasswordEncoder();
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		repositoryRestConfiguration.exposeIdsFor(Appli.class, Content.class, UserApp.class, RoleApp.class);
 	}
 }
 
