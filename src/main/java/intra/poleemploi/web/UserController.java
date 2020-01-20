@@ -5,7 +5,7 @@ import intra.poleemploi.dao.UserAppRepository;
 import intra.poleemploi.entities.Appli;
 import intra.poleemploi.entities.RoleApp;
 import intra.poleemploi.entities.UserApp;
-import intra.poleemploi.service.AuthService;
+//import intra.poleemploi.service.AuthService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -24,8 +24,8 @@ import java.util.Set;
 @CrossOrigin("*")
 @RestController
 public class UserController {
-    @Autowired
-    private AuthService authService;
+    /*@Autowired
+    private AuthService authService;*/
     @Autowired
     private UserAppRepository userAppRepository;
     @Autowired
@@ -34,12 +34,12 @@ public class UserController {
     @GetMapping(value = "/listUsers")
     public List<UserApp> listUsers(){return userAppRepository.findAll();}
 
-    @PostMapping(value = "/adminUsers")
+   /* @PostMapping(value = "/adminUsers")
     public UserApp register(@RequestBody UserForm userForm){ // données envoyées au format JSON
         return authService.saveUserApp(userForm.getUsername(), userForm.getPassword(), userForm.getConfirmedPassword());
-    }
+    }*/
 
-    @PutMapping(value = "/updateUserRoles/{id}")
+    /*@PutMapping(value = "/updateUserRoles/{id}")
     public ResponseEntity<UserApp> updateUserRoles(@PathVariable(value="id") Long id, @RequestBody List<RoleApp> roles) throws ResourceNotFoundException {
         UserApp userBdd = userAppRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found for this id :: " + id));
@@ -47,9 +47,9 @@ public class UserController {
         // ResponseEntity<UserApp> response;
         return ResponseEntity.ok(authService.saveUserApp(userBdd));
         // return response ;
-    }
+    }*/
 
-    @PutMapping(value = "/updateUserApplis/{id}")
+    /*@PutMapping(value = "/updateUserApplis/{id}")
     public ResponseEntity<UserApp> updateUserApplis(@PathVariable(value="id") Long id, @RequestBody Set<Appli> applis) throws ResourceNotFoundException {
         UserApp userBdd = userAppRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found for this id :: " + id));
@@ -60,7 +60,7 @@ public class UserController {
             userBdd.getApplis().add(appliRepository.findAppliByAppliName(appli.getAppliName()));
         }
         return ResponseEntity.ok(authService.saveUserApp(userBdd));
-    }
+    }*/
 }
 @Data
 class UserForm {

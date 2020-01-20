@@ -1,3 +1,4 @@
+/*
 package intra.poleemploi.service;
 
 import intra.poleemploi.entities.RoleApp;
@@ -13,3 +14,4 @@ public interface AuthService {
     void addRoleToUser(String username, String roleName);
     void addAppliToUser(String username, String appliName);
 }
+*/
