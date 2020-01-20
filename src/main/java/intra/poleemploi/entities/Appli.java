@@ -17,7 +17,7 @@ public class Appli implements Serializable {
     private Integer id;
     @Column(unique = true)
     private String appliName;
-    private String appliUrl;
+    //private String appliUrl;
     private String idAppliKM;
     @OneToMany (cascade = CascadeType.ALL, mappedBy = "appli", orphanRemoval = true)
     private Collection<Content> contents = new ArrayList<>();

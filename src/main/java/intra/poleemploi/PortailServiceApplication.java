@@ -35,7 +35,7 @@ public class PortailServiceApplication {
 	CommandLineRunner start(AppliRepository appliRepository, ContentRepository contentRepository, AuthService authService, UserAppRepository userAppRepository){
 		return args -> {
 			repositoryRestConfiguration.exposeIdsFor(Appli.class, Content.class, UserApp.class, RoleApp.class);
-			/*// A VIRER => supprime les données Appli avant chaque lancement de l'appli
+			// A VIRER => supprime les données Appli avant chaque lancement de l'appli
 			appliRepository.deleteAll();
 			// save les données Appli en BDD
 			appliRepository.save(new Appli(1, "APP01", "Profil de compétences", new ArrayList<>()));
@@ -101,7 +101,7 @@ public class PortailServiceApplication {
 			authService.addAppliToUser("user4", "KairosFab");
 
 
-			userAppRepository.findAll().forEach(System.out::println);*/
+			userAppRepository.findAll().forEach(System.out::println);
 			
 		};
 	}
