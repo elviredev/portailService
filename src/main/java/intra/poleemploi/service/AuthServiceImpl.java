@@ -1,6 +1,6 @@
 package intra.poleemploi.service;
 
-/*import intra.poleemploi.dao.AppliRepository;
+import intra.poleemploi.dao.AppliRepository;
 import intra.poleemploi.dao.RoleAppRepository;
 import intra.poleemploi.dao.UserAppRepository;
 import intra.poleemploi.entities.Appli;
@@ -9,10 +9,9 @@ import intra.poleemploi.entities.UserApp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;*/
+import org.springframework.transaction.annotation.Transactional;
 
 
-/*
 @Service
 @Transactional
 public class AuthServiceImpl implements AuthService {
@@ -78,4 +77,3 @@ public class AuthServiceImpl implements AuthService {
 
 
 }
-*/

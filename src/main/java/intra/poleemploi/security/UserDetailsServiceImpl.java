@@ -1,4 +1,3 @@
-/*
 package intra.poleemploi.security;
 
 import intra.poleemploi.entities.UserApp;
@@ -34,4 +33,3 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return new User(userApp.getUsername(), userApp.getPassword(), authorities);
     }
 }
-*/
