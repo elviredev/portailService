@@ -17,11 +17,12 @@ import java.util.List;
 import java.util.Set;
 
 
-@RestController
+
 //@RequestMapping("/")
 //@CrossOrigin(origins = "http://localhost:4200")
 //@CrossOrigin(origins = "https://guidance-stats.herokuapp.com")
 @CrossOrigin("*")
+@RestController
 public class UserController {
     @Autowired
     private AuthService authService;
@@ -29,6 +30,9 @@ public class UserController {
     private UserAppRepository userAppRepository;
     @Autowired
     private AppliRepository appliRepository;
+
+    @GetMapping(value = "/listUsers")
+    public List<UserApp> listUsers(){return userAppRepository.findAll();}
 
     @PostMapping(value = "/adminUsers")
     public UserApp register(@RequestBody UserForm userForm){ // données envoyées au format JSON

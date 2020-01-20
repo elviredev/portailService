@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/contact/**", "/login/**", "/adminUsers/**", "/updateUserRoles/**", "/updateUserApplis/**").permitAll();
         // ***** A ENLEVER POUR LA PROD >> IL FAUT ETRE ADMIN POUR AVOIR LISTE DES USERS et ROLES ***** //
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/userApps/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/userApps/**").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "/listUsers/**").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/roleApps/**").permitAll();
         http.authorizeRequests().antMatchers("/userApps/**", "/roleApps/**").hasAuthority("ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/applis/**").permitAll();
