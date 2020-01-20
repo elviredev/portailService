@@ -11,7 +11,7 @@
 	<groupId>intra.poleemploi</groupId>
 	<artifactId>portail-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>portail-service</name>
+	<name>portailservice</name>
 	<description>Portail Service Guidance-Stats for Spring Boot</description>
 
 	<properties>
@@ -87,6 +87,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
